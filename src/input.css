@@ -5,145 +5,99 @@
     --font-display: "Playfair Display", serif;
     --font-body: "Inter", sans-serif;
 
-    /* === Core Brand Colors (Your Choices) === */
-    --color-primary: #3C2A21;    /* Dark Chocolate: For primary text, headers, navigation */
-    --color-accent: #FCD34D;     /* Golden Amber: For CTAs, highlights, prices, hover states */
-    --color-camel: #D7B494;      /* More muted camel for sophisticated UI */
+    /* Core Brand Colors */
+    --color-primary: #3C2A21;
+    --color-accent: #FCD34D;
+    --color-camel: #D7B494;
     
     /* Neutral System */
-    --color-dark: #1C1917;       /* Rich Black-Brown: For strong contrast, footer, hero text */
-    --color-light: #FDFBF7;      /* Creamy Ivory: Main background color (warm off-white) */
-    --color-warm-gray: #A89F94;  /* Warm Taupe-Gray: For secondary text, subtle lines, disabled states */
-    --color-terracotta: #B4533F; /* Burnt Sienna/Red-Orange: For accent alerts, special tags, "spicy" hints */    /* Clean off-white background */
+    --color-dark: #1C1917;
+    --color-light: #FDFBF7;
+    --color-warm-gray: #A89F94;
+    --color-terracotta: #B4533F;
 }
 
 @layer base {
     html {
         font-family: var(--font-body);
+        background-color: var(--color-light); /* Apply your background color */
     }
-    body {
+    h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-display);
     }
 }
 
-/* Custom styling for images  */
 @layer components {
     .gallery-img {
-        @apply w-[220px] sm:w-[280px] md:w-[320px] lg:w-[380px] xl:w-[450px]  h-[180px] sm:h-[220px] md:h-[260px] lg:h-[300px] xl:h-[350px] 
-       object-cover rounded-xl;
+        @apply w-[220px] sm:w-[280px] md:w-[320px] lg:w-[380px] xl:w-[450px] 
+               h-[180px] sm:h-[220px] md:h-[260px] lg:h-[300px] xl:h-[350px] 
+               object-cover rounded-xl;
+    }
+
+    .nav-link {
+        /* Fixed space error and combined hover logic */
+        @apply text-dark transition-all duration-300
+               hover:text-amber-800 hover:underline 
+               hover:decoration-primary hover:underline-offset-4 
+               hover:decoration-[3px];
     }
 }
 
+/* === Fixed Animations === */
 
-/* Navigation links */
-.nav-link {
-    @apply text-dark 
-    hover:text-accent transition
-    hover:underline 
-    hover:decoration-primary 
-    hover:underline-offset-4 
-    hover:decoration-[3px];
-}
-
-/* Slide-in Animationa */
-.slide-in-up {
+/* Entrance: Slide from Left */
+.slide-in-left {
     opacity: 0;
     transform: translateX(-50px);
     transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/* Entrance: Fade and Scale Up */
 .slide-in-fade {
     opacity: 0;
     transform: translateY(30px) scale(0.95);
     transition: all 0.8s ease-out;
 }
 
-.slide-in-up {
-    transform: translateX(50px);
-}
-
-.slide-in-up.active,
+.slide-in-left.active,
 .slide-in-fade.active {
     opacity: 1;
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) scale(1);
 }
 
-/* ==== Left to Right Animation ==== */
-@keyframes scrollLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-.animate-left {
-    animation: scrollLeft 20s linear infinite;
-}
-
-
-/* ==== Spinner Animation ==== */
-#exploreButton {
-    position: static; 
-    display: flex; /* Matches the Tailwind `flex` class added */
-    align-items: center; /* Matches the Tailwind `items-center` class added */
-}
-
-/* Hides the spinner container initially */
-#spinnerContainer.hidden {
-    display: none;
-}
-
-/* New rule to prevent clicking while loading */
+/* === Spinner & Loading === */
 .is-loading {
-    pointer-events: none; /* Disable pointer events */
-    opacity: 0.7; /* visually indicate disabled state */
+    pointer-events: none;
+    opacity: 0.7;
 }
 
-
-/* Base style for the spinner itself */
 #spinner {
-    /* Make it a small circle */
-    width: 1.25rem; /* 20px */
-    height: 1.25rem; /* 20px */
-    
-    border: 3px solid #f3f3f3; /* Light grey border */
-    border-top: 3px solid black; /* Blue border for the spin effect */
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--color-dark); /* Use your theme variable */
     border-radius: 50%;
-    
-    /* Display as inline-block so it respects the size */
     display: inline-block; 
-    
-    /* Start the animation */
     animation: spin 1s linear infinite;
 }
 
-/* The spinning animation (no longer needs the translate fix) */
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-/* Modal Styles */
-@keyframes fadeIn {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-  .animate-fadeIn { animation: fadeIn .4s ease-out; }
+/* === Hamburger Menu Fix === */
+/* Ensure these transitions exist so the "X" looks smooth */
+#bar-top, #bar-middle, #bar-bottom {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
-
-/* The parent button receives the `menu-open` class from JS */
 #menu-toggle.menu-open #bar-top {
-    /* Top bar: Rotates 45deg and moves to the center */
     transform: translateY(11px) rotate(45deg);
 }
-
 #menu-toggle.menu-open #bar-middle {
-    /* Middle bar: Fades out/disappears */
     opacity: 0;
 }
-
 #menu-toggle.menu-open #bar-bottom {
-    /* Bottom bar: Rotates -45deg and moves to the center */
     transform: translateY(-11px) rotate(-45deg);
 }
