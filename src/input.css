@@ -15,6 +15,7 @@
     --color-light: #FDFBF7;
     --color-warm-gray: #A89F94;
     --color-terracotta: #B4533F;
+
 }
 
 @layer base {
@@ -27,21 +28,15 @@
     }
 }
 
-@layer components {
-    .gallery-img {
-        @apply w-[220px] sm:w-[280px] md:w-[320px] lg:w-[380px] xl:w-[450px] 
-               h-[180px] sm:h-[220px] md:h-[260px] lg:h-[300px] xl:h-[350px] 
-               object-cover rounded-xl;
-    }
 
-    .nav-link {
-        /* Fixed space error and combined hover logic */
-        @apply text-dark transition-all duration-300
-               hover:text-amber-800 hover:underline 
-               hover:decoration-primary hover:underline-offset-4 
-               hover:decoration-[3px];
-    }
+.nav-link {
+    /* Fixed space error and combined hover logic */
+    @apply text-dark transition-all duration-300
+           hover:text-amber-800 hover:underline 
+           hover:decoration-primary hover:underline-offset-4 
+           hover:decoration-[3px];
 }
+
 
 /* === Fixed Animations === */
 
@@ -101,3 +96,47 @@
 #menu-toggle.menu-open #bar-bottom {
     transform: translateY(-11px) rotate(-45deg);
 }
+
+/* Your existing image component */ 
+@layer components { 
+    .gallery-img { 
+        @apply w-[220px] sm:w-[280px] md:w-[320px] lg:w-[380px] xl:w-[450px] h-[180px] sm:h-[220px] md:h-[260px] lg:h-[300px] xl:h-[350px] object-cover rounded-xl flex-shrink-0; 
+    } 
+}
+
+    /* ==== STYLING FOR GALLERY IMAGES ===== */
+  /* Track container */
+  .marquee-container {
+    overflow: hidden;
+    width: 100%;
+    background: var(--color-camel);
+    padding: 16px;
+  }
+
+  /* Moving track */
+  .marquee-track {
+    display: inline-flex;    /* inline makes translateX respect content width */
+    gap: 16px;
+    will-change: transform;  /* improves smoothness */
+    animation: marquee 20s linear infinite;
+  }
+
+  /* Image styles 
+  .gallery-img {
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }  */
+
+  /* Keyframes: slide full width left */
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* move half because content is duplicated */
+  }
+
+  /* Optional: pause on hover */
+  .marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+  }
