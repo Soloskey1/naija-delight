@@ -3,104 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Savore is a fine dining restaurant offering authentic Italian cuisine, handcrafted pasta, desserts, and premium drinks in a warm, elegant setting.">
+  <meta name="description" content="Naija Delight is a fine dining restaurant offering authentic Nigerian cuisine, traditional soups, swallows, grilled meats, and premium drinks in a warm, elegant setting.">
   <meta name="theme-color" content="#FCD34D">
-  <meta name="keywords" content="restaurant, food, food near me, dinning, local restaurant, local dishes, eatery">
+  <meta name="keywords" content="restaurant, Nigerian food, food near me, dining, local restaurant, Nigerian dishes, eatery, jollof rice, egusi soup">
   <link href="styles.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <title>Savore - Fine Dining Restaurant </title>
+  <title>Naija Delight - Fine Dining Nigerian Restaurant</title>
 </head>
 <body class="font-body text-dark bg-light">
-<!-- Navigation-->
+ <!-- === HEADER ===== --> 
 <header class="fixed top-0 w-full bg-white shadow-md z-50">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-   <div class="flex justify-between items-center h-16">
-
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between gap-3 items-center h-16">
+      
       <!-- Logo -->
-      <div class="flex flex-col justify-center items-start md:items-start border-l-4 border-primary pl-4">
-         <h1 class="text-3xl font-display font-black text-primary tracking-tight">SAVORE</h1>
-         <p class="text-[10px] text-stone-500 uppercase tracking-[0.3em] font-bold">Est 2015</p>
+      <div class="flex flex-col justify-center items-start flex-shrink-0">
+        <h1 class="text-3xl font-display font-black text-primary">NAIJA DELIGHT</h1>
+        <p class="text-xs text-stone-500 uppercase tracking-widest">Food • Recipes • Stories</p>
       </div>
 
-      <!-- === Desktop Menu ==== -->
-      <div class="hidden md:flex space-x-8 ">
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-6">
         <a href="#" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#" class="nav-link">Menu</a>
-        <a href="#" class="nav-link">Gallery</a>
-         <a href="#" class="nav-link">Contact</a>
-      </div>
-
-      <!-- ==== Hamburger ==== -->
-      <div class="md:hidden">
-        <button id="mobile-toggle" class="group flex items-center justify-center w-10 h-10
-        rouned-xl bg-white shadow hover:shadow-lg transition-all duration-300">
-          <svg class="w-6 h-6 stroke-black transition-all duration-300 group-hover:text-primary" fill="none" stroke="currentColor" 
-          viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-wdith="2"
-         d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        </button>
+        <a href="#reserve" class="nav-link">Reservation</a>
+        <a href="#" class="nav-link">Recipes</a>
+        <a href="#about" class="nav-link">Our Story</a>
         
-      </div> 
-
-   <div class="hidden md:flex items-center justify-center space-x-6">
-
-
-    <!-- Notifications -->
-     <div class="relative inline-block">
-     <button id="bellBtn" href="#" class="relative flex items-center justify-center text-dark hover:text-primary transition duration-300">
-         <i class="fa-regular fa-bell text-2xl"></i>
-      <!-- Badge -->
-      <span class="absolute -top-3 -right-2 bg-primary text-white text-sm font-bold rounded-full w-4 h-4 flex items-center justify-center">
-        2
-      </span>
-     </button> 
-
-     <!-- Notification dropdown -->
-      <div id="dropdown"
-            class="hidden absolute right-0 mt-2 w-63 bg-white border border-gray-200 rounded-lg shadow-lg">
-
-        <div class="p-4 border-b font-semibold  text-gray-700">Notifications</div>
-
-        <ul class="divide-y">
-          <li class="p-4 text-sm text-gray-600 hover:bg-gray-50">Your session has expired</li >
-          <li  class="p-4 text-sm text-gray-600 hover:bg-gray-50">New meals added to the menu</li >
-        </ul>
-
-     </div>
-   </div>  
-
-       
-      <!-- Sign in -->
-        <a href="#"
-          class="flex items-center gap-2 text-dark hover:text-primary tracking-normal transition duration-300">
-          <span>Sign in</span>
-          <i class="fas fa-arrow-right"></i>
+        <!-- Search -->
+        <div class="relative ml-4">
+          <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+          <input type="text" placeholder="Search recipes..." 
+                 class="pl-10 pr-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20">
+        </div>
+        
+        <!-- Subscribe CTA -->
+        <a href="/newsletter" 
+           class="bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90 transition flex-shrink-0">
+          Get Recipes
         </a>
+      </nav>
 
+      <!-- Mobile Toggle -->
+      <button id="mobile-toggle" class="md:hidden group flex items-center justify-center w-10 h-10
+      rounded-xl bg-white shadow hover:shadow-lg transition-all duration-300">
+        <!-- Hamburger icon -->
+        <svg class="w-6 h-6 stroke-black transition-all duration-300 group-hover:text-primary" fill="none" stroke="currentColor" 
+        viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
-    </div>
- </div>
-
- <!-- Mobile Menu-->
-  <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg text-left">
-    <a href="#home" class="menu-link block px-4 py-2 text-dark hover:bg-primary hover:text-light">Home</a>
-    <a href="#about" class="menu-link block px-4 py-2 text-dark hover:bg-primary hover:text-light">About</a>
-    <a href="#menu" class="menu-link block px-4 py-2 text-dark hover:bg-primary hover:text-light">Menu</a>
-    <a href="#gallery" class="menu-link block px-4 py-2 text-dark hover:bg-primary hover:text-light">Gallery</a>
-    <a href="#contact" class="menu-link block px-4 py-2 text-dark hover:bg-primary hover:text-light">Contact</a>
   </div>
-  
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+    <a href="#home" class="menu-link block px-4 py-2 text-dark hover:bg-primary hover:text-light">Home</a>
+    <a href="#reserve" class="menu-link block px-4 py-2 text-dark hover:bg-primary hover:text-light">Reservation</a>
+    <a href="#" class="menu-link block px-4 py-2 text-dark hover:bg-primary hover:text-light">Recipes</a>
+    <a href="#about" class="menu-link block px-4 py-2 text-dark hover:bg-primary hover:text-light">Our Story</a>
+  </div>
 </header>
   
 <!-- Hero Section -->
- <section id="home" class="pt-16 bg-gradient-to-br from-primary/90 to-dark/90 text-white">
+ <section id="home" class="pt-16 bg-gradient-to-br from-primary to-green-900 text-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
     <h1 class="text-5xl md:text-7xl font-display mb-4">
-      Welcome to Savore</h1>
-    <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-    Experience culinary excellence in an elegant atmosphere.</p>
+      Welcome to Naija Delight</h1>
+    <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-body">
+    Experience authentic Nigerian culinary excellence in an elegant atmosphere.</p>
 
     <div class="space-x-4">
     <button id="openMenuModal"
@@ -115,115 +86,160 @@
   </div>
  </section>
 
-<!-- Modal window -->
-<div id="menuModal" 
+  <!-- Modal WIndow -->
+  <div id="menuModal" 
      class="fixed inset-0 bg-black/70 backdrop-blur-md hidden items-center justify-center z-50 p-4"
      role="dialog"
-     aria-modal="true"
-     aria-labelledby="menuModalTitle"
-     aria-describedby="menuModalDescription">
+     aria-modal="true">
   
-  <div class="bg-gradient-to-br from-white to-gray-50 w-full max-w-lg rounded-2xl shadow-2xl overflow-auto animate-fadeInUp">
+  <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden animate-fadeInUp">
     
-    <!-- Modal Header -->
-    <div class="bg-primary p-6">
-      <div class="flex justify-between items-start">
-        <div>
-          <h2 id="menuModalTitle" class="text-2xl font-display font-bold text-white">Our Culinary Menu</h2>
-          <p id="menuModalDescription" class="text-white/90 mt-1">Discover chef-crafted specialties</p>
-        </div>
-        
-        <!-- Close Button -->
-        <button id="closeMenuModal"
-                class="text-white hover:text-accent transition-colors text-2xl p-1 rounded-full hover:bg-white/10"
-                aria-label="Close menu modal">
-          &times;
-        </button>
-      </div>
+    <div class="bg-gradient-to-r from-primary to-green-800 p-8 text-white relative">
+      <button id="closeMenuModal" class="absolute top-4 right-4 text-light hover:text-gray-700 text-3xl">&times;</button>
+      <h2 class="text-3xl font-display font-bold">The Naija Delight  Signature</h2>
+      <p class="opacity-90 font-light">Authentic Nigerian flavors, elevated for the modern palate.</p>
     </div>
 
-    <!-- Modal Content -->
-    <div class="p-6 md:p-7 h-[80vh]">
-      <p class="text-gray-600 mb-6 leading-relaxed">
-        Browse our curated selection of fine dishes prepared by world-class chefs using locally-sourced ingredients.
-      </p>
-
-      <!-- Menu Items with Enhanced Visuals -->
-      <div class="space-y-3 md:space-y-4 mb-8">
-        <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 transition-colors group">
-         <div class="bg-primary/10 p-3 rounded-lg mr-5 group-hover:scale-110 transition-transform">
-            <span class="text-2xl">🥗</span>
+    <div class="p-6 md:p-10 max-h-[70vh] overflow-y-auto">
+      
+      <div class="mb-10">
+        <h3 class="text-xs uppercase tracking-widest text-primary font-bold mb-4 border-b border-gray-100 pb-2">Small Chops & Starters</h3>
+        <div class="grid gap-4">
+          <div class="flex justify-between items-center group">
+            <div>
+              <h4 class="font-bold text-dark group-hover:text-primary transition">Assorted Suya Platter</h4>
+              <p class="text-sm text-gray-500 italic">Spiced beef, chicken, and kidney with yaji spice</p>
+            </div>
+            <span class="font-display font-bold text-primary">₦4,500</span>
           </div>
-          <div>
-            <h3 class="font-semibold text-gray-800 text-lg">Appetizers</h3>
-            <p class="text-sm text-gray-500">Seasonal starters, light bites</p>
-          </div>
-        </div>
-
-        <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 transition-colors group">
-          <div class="bg-primary/10 p-3 rounded-lg mr-5 group-hover:scale-110 transition-transform">
-            <span class="text-2xl">🍝</span>
-          </div>
-          <div>
-            <h3 class="font-semibold text-gray-800 text-lg">First Course</h3>
-            <p class="text-sm text-gray-500">Handmade pasta, soups, risottos</p>
-          </div>
-        </div>
-
-        <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 transition-colors group">
-          <div class="bg-primary/10 p-3 rounded-lg mr-5 group-hover:scale-110 transition-transform">
-            <span class="text-2xl">🥩</span>
-          </div>
-          <div>
-            <h3 class="font-semibold text-gray-800 text-lg">Second Course</h3>
-            <p class="text-sm text-gray-500">Grilled meats, seafood, chef specials</p>
-          </div>
-        </div>
-
-        <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 transition-colors group">
-          <div class="bg-primary/10 p-3 rounded-lg mr-5 group-hover:scale-110 transition-transform">
-            <span class="text-2xl">🥔</span>
-          </div>
-          <div>
-            <h3 class="font-semibold text-gray-800 text-lg">Side Dishes</h3>
-            <p class="text-sm text-gray-500">Roasted vegetables, potatoes, grains</p>
-          </div>
-        </div>
-
-        <div class="flex items-center p-3 rounded-lg hover:bg-gray-100 transition-colors group">
-          <div class="bg-primary/10 p-2 rounded-lg mr-4 group-hover:scale-110 transition-transform">
-            <span class="text-xl">🍰</span>
-          </div>
-          <div>
-            <h3 class="font-semibold text-gray-800">Desserts & Pastries</h3>
-            <p class="text-sm text-gray-500">Pastry chef creations, sweet indulgence</p>
+          <div class="flex justify-between items-center group">
+            <div>
+              <h4 class="font-bold text-dark group-hover:text-primary transition">Golden Puff Puff (4pcs)</h4>
+              <p class="text-sm text-gray-500 italic">Sweet dough balls with a hint of nutmeg</p>
+            </div>
+            <span class="font-display font-bold text-primary">₦1,200</span>
           </div>
         </div>
       </div>
-  
-      <!-- Action Buttons -->
-      <div class="flex flex-col sm:flex-row gap-3">
-        <a href="#menu"
-           class="flex-1 bg-primary text-white py-3 rounded-lg font-semibold hover:bg-accent hover:text-dark transition-all duration-300 text-center shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-           View Full Menu
-        </a>
-        <button class="flex-1 border-2 border-primary text-primary py-3 rounded-lg font-semibold hover:bg-primary/5 transition-colors">
-           Download PDF Menu
-        </button>
+
+      <div class="mb-10">
+        <h3 class="text-xs uppercase tracking-widest text-primary font-bold mb-4 border-b border-gray-100 pb-2">Signature Mains</h3>
+        <div class="grid gap-6">
+          <div class="flex gap-4">
+            <span class="text-3xl">🍚</span>
+            <div class="flex-1">
+              <div class="flex justify-between">
+                <h4 class="font-bold text-dark">Smokey Party Jollof</h4>
+                <span class="font-display font-bold text-primary">₦6,500</span>
+              </div>
+              <p class="text-sm text-gray-500">Long-grain parboiled rice cooked in a rich tomato and bell pepper base, served with moin-moin.</p>
+            </div>
+          </div>
+          
+          <div class="flex gap-4">
+            <span class="text-3xl">🍲</span>
+            <div class="flex-1">
+              <div class="flex justify-between">
+                <h4 class="font-bold text-dark">Fisherman's Okra Soup</h4>
+                <span class="font-display font-bold text-primary">₦8,000</span>
+              </div>
+              <p class="text-sm text-gray-500">Fresh seafood medley (prawns, calamari, fish) in a crunchy okra base. Best with Pounded Yam.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Additional Info -->
-      <div class="mt-4 pt-5 border-t border-gray-200">
-        <div class="flex items-center text-sm text-gray-600">
-          <span class="mr-2">🕒</span>
-          <p>Available daily from 11AM - 10PM • Seasonal items may vary</p>
-        </div>
+      <div class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-100">
+        <a href="#reserve" class="flex-1 bg-primary text-white text-center py-4 rounded-xl font-bold hover:shadow-lg transition">Book a Table to Dine</a>
+        <button class="flex-1 border-2 border-primary text-primary py-4 rounded-xl font-bold hover:bg-primary/5 transition">Download Menu (PDF)</button>
       </div>
     </div>
   </div>
 </div>
 
-
+  <!-- Recipe  -->
+  <section id="recipe" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-display text-primary mb-2">Recipe of the Day</h2>
+        <p class="text-gray-500 italic">Bring a taste of Naija Delight to your home kitchen</p>
+      </div>
+  
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- Image + Info Card -->
+        <div class="space-y-6">
+          <!-- Main Round Image -->
+          <div class="flex flex-col items-center">
+            <div class="rounded-full overflow-hidden shadow-2xl w-96 h-96 mx-auto">
+              <img src="https://i.ytimg.com/vi/Kl57yfVNIoE/maxresdefault.jpg"
+                   alt="Egusi Soup with Pounded Yam"
+                   class="w-full h-full object-cover">
+            </div>
+  
+            <!-- Prep/Servings/Difficulty just below the image -->
+            <div class="mt-8 w-full max-w-md mx-auto bg-primary text-white rounded-2xl shadow-lg p-6">
+              <div class="flex justify-around text-center">
+                <div>
+                  <span class="block text-sm opacity-80 uppercase tracking-wider">Prep Time</span>
+                  <span class="text-2xl font-bold">30 Mins</span>
+                </div>
+                <div class="border-x border-white/30 px-10">
+                  <span class="block text-sm opacity-80 uppercase tracking-wider">Servings</span>
+                  <span class="text-2xl font-bold">4 People</span>
+                </div>
+                <div>
+                  <span class="block text-sm opacity-80 uppercase tracking-wider">Difficulty</span>
+                  <span class="text-2xl font-bold">Medium</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Text Content -->
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-4xl font-display text-dark mb-4">Egusi Soup with Pounded Yam</h3>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              A classic Nigerian delicacy featuring rich melon seed soup with vegetables, meats, and served with smooth pounded yam. 
+              This hearty dish is a favorite on our menu – flavorful and comforting.
+            </p>
+          </div>
+  
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-bold text-primary uppercase text-sm mb-4 border-b-2 border-primary/30 pb-2">Ingredients (Soup)</h4>
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start"><span class="mr-2">•</span> 2 cups ground egusi (melon seeds)</li>
+                <li class="flex items-start"><span class="mr-2">•</span> Assorted meats (beef, tripe, stockfish)</li>
+                <li class="flex items-start"><span class="mr-2">•</span> Palm oil</li>
+                <li class="flex items-start"><span class="mr-2">•</span> Spinach or ugu leaves</li>
+                <li class="flex items-start"><span class="mr-2">•</span> Crayfish, onions, peppers</li>
+                <li class="flex items-start"><span class="mr-2">•</span> Stock cubes and salt</li>
+              </ul>
+            </div>
+  
+            <div>
+              <h4 class="font-bold text-primary uppercase text-sm mb-4 border-b-2 border-primary/30 pb-2">Preparation</h4>
+              <ol class="space-y-3 text-gray-700 list-decimal pl-5">
+                <li>Cook assorted meats until tender and set stock aside.</li>
+                <li>Fry egusi in palm oil, add peppers and onions.</li>
+                <li>Add meat stock, meats, crayfish; simmer.</li>
+                <li>Add vegetables last; serve with pounded yam (prepared from yam flour or fresh yam).</li>
+              </ol>
+            </div>
+          </div>
+  
+          <div class="pt-4">
+            <button class="bg-accent hover:bg-yellow-500 text-dark font-medium px-8 py-3 rounded-full shadow-md transition transform hover:scale-105">
+              Print Recipe
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
  <!-- About Section -->
   <section id="about" class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -231,19 +247,18 @@
            <div >
               <h2 class="text-4xl font-display text-primary mb-6">Our Story & Philosophy </h2>
               <p class="text-sm md:text-lg mb-4">
-                Founded in 2015, Savore has been a cornerstone of fine dining in the heart of the city. Our  
-                passion for fresh, locally-sourced ingredients and innovative cuisine has earned us recognition
-                among food critics and loyal patrons alike.
+                Founded in 2015, Naija Delight has been a cornerstone of authentic Nigerian fine dining in the heart of Lagos. Our  
+                passion for fresh, locally-sourced ingredients and traditional recipes has earned us recognition
+                among food lovers and critics alike.
               </p>
               <p class="text-sm md:text-lg">
-                From initimate dinners to grind celebrations, our team is dedicated to creating unforgettable 
-                dining experience.
+                From intimate dinners to grand celebrations, our team is dedicated to creating unforgettable 
+                Nigerian dining experiences.
               </p>
-             <!-- <a href="#contact" class="text-amber-600 font-semibold hover:text-amber-800 transition duration-300 pt-15">Meet Our Team &rarr;</a> -->
            </div>
            <div class="flex flex-1 rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] group">
             <img class="w-full h-auto block transition-transform duration-500 ease-in-out group-hover:scale-105"
-            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Restaurant Interior">
+            src="https://offloadmedia.feverup.com/secretbirmingham.com/wp-content/uploads/2025/11/27130336/interior-1024x683.jpg" alt="Restaurant Interior">
                 </div>
            </div>
        </div>
@@ -253,7 +268,7 @@
    
 
    <!-- Contact and Reservation -->
-    <section id="contact" class="py-16 bg-gray-50">
+    <section id="reserve" class="py-16 bg-gray-50">
        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <h2 class="text-4xl font-display text-primary text-center mb-12">
@@ -262,14 +277,14 @@
           <div class="grid md:grid-cols-2 gap-12">
            <div>
             <h3 class="text-2xl font-display text-dark mb-4">Visit Us</h3>
-            <p class="mb-2"><strong>Address:</strong> 123 Gournet Street, Culinary District, W 10001</p>
-            <p class="mb-2"><strong>Phone:</strong> (555) 123-4567</p>
-            <p class="mb-2"><strong>Email Us:</strong> savore@biz.italy</p>
+            <p class="mb-2"><strong>Address:</strong> 123 Victoria Island, Lagos, Nigeria</p>
+            <p class="mb-2"><strong>Phone:</strong> +234 123 456 7890</p>
+            <p class="mb-2"><strong>Email Us:</strong> info@naijadelight.ng</p>
             <p class="mt-6"><strong>Hours:</strong></p>
             <ul class="mt-2 space-y-1">
                <li >Mon-Thu: 10:00 AM - 11:00 PM</li >
-               <li >Fri-Sat: 11:00 AM - 11:00 PM</li >
-               <li >Sun: 12:00 PM - 9:00 PM</li >
+               <li >Fri-Sat: 11:00 AM - 12:00 AM</li >
+               <li >Sun: 12:00 PM - 10:00 PM</li >
             </ul>
           </div>
           <div>
@@ -277,14 +292,14 @@
               <!--Reservation Form -->
               <form class="space-y-4">
                  <input type="text" placeholder="Name"
-                 class="w-full py-2 px-4 border rounded-lg focus:ouline-none focus:border-primary" />
+                 class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-primary" />
                  <input type="email" placeholder="Email"
-                 class="w-full py-2 px-4 border rounded-lg focus:ouline-none focus:border-primary" />
+                 class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-primary" />
                  <input type="tel" placeholder="Phone"
-                 class="w-full py-2 px-4 border rounded-lg focus:ouline-none focus:border-primary" />
+                 class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-primary" />
                  <input type="date" 
-                 class="w-full py-2 px-4 border rounded-lg focus:ouline-none focus:border-primary" />
-                 <select   class="w-full py-2 px-4 border rounded-lg focus:ouline-none focus:border-primary">
+                 class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-primary" />
+                 <select   class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-primary">
                   <option>Party Size</option>
                   <option>2</option>
                   <option>4</option>
@@ -300,53 +315,124 @@
        </div>
     </section>
 
+    <!-- CEO and Chefs -->
+    <section class="w-full bg-yellow-50 py-20 px-4">
+      <div class="max-w-6xl mx-auto text-center mb-24">
+        <h3 class="text-4xl font-display text-primary mb-2">CEO & Chefs</h3>
+        <p class="text-sm md:text-lg tracking-widest font-display text-dark italic opacity-90">
+          Our most important team members.
+        </p>
+      </div>
+    
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-8 w-4/5 md:w-full">
+        
+        <div class="relative bg-white pt-20 pb-12 px-8 rounded-2xl shadow-2xl text-center flex flex-col justify-between min-h-[420px]">
+          <div class="absolute -top-14 left-1/2 transform -translate-x-1/2">
+            <div class="w-35 h-35 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-200">
+              <img src="https://thumbs.dreamstime.com/b/portrait-positive-chef-just-baked-hot-cupcakes-african-american-male-baker-holding-smiling-looking-camera-275431379.jpg" alt="CEO" class="w-full h-full object-cover">
+            </div>
+          </div>
+          
+          <div class="mt-2">
+            <h4 class="text-2xl font-bold text-gray-800 uppercase tracking-tight">Solomon Kingson </h4>
+            <p class="text-primary font-semibold mb-6">CEO & Founder</p>
+            <div class="w-12 h-1 bg-primary/45 mx-auto mb-6"></div>
+            <p class="text-gray-700 text-base leading-relaxed italic">
+              Leading the vision with a passion for excellence and bringing authentic Nigerian flavors to fine dining.
+            </p>
+          </div>
+          
+          <div class="mt-6 pt-4 border-t border-gray-200 text-xs text-gray-600 italic">
+            "Quality is not an act, it is a habit."
+          </div>
+        </div>
+    
+        <div class="relative bg-white pt-20 pb-12 px-8 rounded-2xl shadow-2xl text-center flex flex-col justify-between min-h-[420px]">
+          <div class="absolute -top-14 left-1/2 transform -translate-x-1/2">
+            <div class="w-35 h-35 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-200">
+              <img src="data:image/jpeg;base64,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" alt="Executive Chef" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <div class="mt-2">
+            <h4 class="text-2xl font-bold text-gray-800 uppercase tracking-tight">Chef Amarachi</h4>
+            <p class="text-primary font-semibold mb-6">Executive Chef</p>
+            <div class="w-12 h-1 bg-primary/45 mx-auto mb-6"></div>
+            <p class="text-gray-700 text-base leading-relaxed">
+              Master of traditional Nigerian soups and stews, bringing regional flavors from across Nigeria.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-50 text-xs text-gray-600 italic">
+            "Cooking is love made visible."
+          </div>
+        </div>
+    
+        <div class="relative bg-white pt-20 pb-12 px-8 rounded-2xl shadow-2xl text-center flex flex-col justify-between min-h-[420px]">
+          <div class="absolute -top-14 left-1/2 transform -translate-x-1/2">
+            <div class="w-35 h-35 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-200">
+              <img src="https://www.shutterstock.com/image-photo/portrait-happy-professional-africanamerican-chef-600nw-2656197059.jpg" alt="Head Chef" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <div class="mt-2">
+            <h4 class="text-2xl font-bold text-gray-800 uppercase tracking-tight">Chef Yusuf</h4>
+            <p class="text-primary font-semibold mb-6">Head Grill Chef</p>
+            <div class="w-12 h-1 bg-primary/45 mx-auto mb-6"></div>
+            <p class="text-gray-700 text-base leading-relaxed">
+              Specialist in suya and grilled delicacies, perfecting the art of spiced meats over open flame.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-50 text-xs text-gray-600 italic">
+            "Good food is the foundation of genuine happiness."
+          </div>
+        </div>
+    
+      </div>
+    </section>
+
     <!-- Gallery -->
     <section class="w-full bg-camel py-12">
         <h3 class="text-4xl font-display text-primary text-center mb-1">Gallery</h3>
-        <p class="text-base md:text-lg tracking-wide font-display text-center text-dark mb-11 italic">Explore our most sort for delicacies.</p>
+        <p class="text-base md:text-lg tracking-wide font-display text-center text-dark mb-11 italic">Explore our most sought-after delicacies.</p>
 
         <!-- Photo Gallery -->
         <div class="marquee-container">
           <div class="marquee-track">
-            <!-- Original images -->
-            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1032&q=80" alt="Linguine alle Vongole" class="gallery-img">
-            <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=870&q=80" alt="Osso Buco" class="gallery-img">
-            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=781&q=80" alt="Alpha Pizza" class="gallery-img">
-            <img src="https://images.unsplash.com/photo-1551782450-17144efb9c50?auto=format&fit=crop&w=869&q=80" alt="Bacon Roll" class="gallery-img">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=872&q=80" alt="Bread Vietnam" class="gallery-img">
+            <!-- Popular Nigerian dishes -->
+            <img src="https://media.istockphoto.com/id/1404501005/photo/jollof-rice.jpg?s=612x612&w=0&k=20&c=jMHne7L_u5mE5yqB9Bmofsv5eIAfBZi82i0_EBA7gJM=" alt="Jollof Rice" class="gallery-img">
+            <img src="https://i.ytimg.com/vi/Kl57yfVNIoE/maxresdefault.jpg" alt="Egusi Soup" class="gallery-img">
+            <img src="https://thumbs.dreamstime.com/b/nigerian-dish-egusi-soup-pounded-yam-featuring-vibrant-greens-spiced-melon-seeds-served-traditional-clay-bowl-369222102.jpg" alt="Pounded Yam and Egusi" class="gallery-img">
+            <img src="https://img.apmcdn.org/979bfc1a532e2d73ac2353ef7ce1db1e2591ae18/widescreen/9729bf-20250319-tst-classic-nigerian-jollof-rice-from-the-book-chop-chop-2000.jpg" alt="Party Jollof" class="gallery-img">
+            <img src="https://www.allrecipes.com/thmb/EJn9SMTzr4QRkdiWdi3ZBgC0Clw=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/7499757JollofriceChefJohn4x3-d601da10d7e845d1ad4c8656a5b87ed4.jpg" alt="Nigerian Rice" class="gallery-img">
       
             <!-- Duplicate set for seamless loop -->
-            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1032&q=80" alt="Linguine alle Vongole" class="gallery-img">
-            <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=870&q=80" alt="Osso Buco" class="gallery-img">
-            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=781&q=80" alt="Alpha Pizza" class="gallery-img">
-            <img src="https://images.unsplash.com/photo-1551782450-17144efb9c50?auto=format&fit=crop&w=869&q=80" alt="Bacon Roll" class="gallery-img">
-            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=872&q=80" alt="Bread Vietnam" class="gallery-img">
+            <img src="https://media.istockphoto.com/id/1404501005/photo/jollof-rice.jpg?s=612x612&w=0&k=20&c=jMHne7L_u5mE5yqB9Bmofsv5eIAfBZi82i0_EBA7gJM=" alt="Jollof Rice" class="gallery-img">
+            <img src="https://i.ytimg.com/vi/Kl57yfVNIoE/maxresdefault.jpg" alt="Egusi Soup" class="gallery-img">
+            <img src="https://thumbs.dreamstime.com/b/nigerian-dish-egusi-soup-pounded-yam-featuring-vibrant-greens-spiced-melon-seeds-served-traditional-clay-bowl-369222102.jpg" alt="Pounded Yam and Egusi" class="gallery-img">
+            <img src="https://img.apmcdn.org/979bfc1a532e2d73ac2353ef7ce1db1e2591ae18/widescreen/9729bf-20250319-tst-classic-nigerian-jollof-rice-from-the-book-chop-chop-2000.jpg" alt="Party Jollof" class="gallery-img">
+            <img src="https://www.allrecipes.com/thmb/EJn9SMTzr4QRkdiWdi3ZBgC0Clw=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/7499757JollofriceChefJohn4x3-d601da10d7e845d1ad4c8656a5b87ed4.jpg" alt="Nigerian Rice" class="gallery-img">
           </div>
         </div>
 
         <!-- Explore Button-->
          <div class="flex justify-center mt-8">
-          <button id="exploreButton" type="button" class="px-12 py-4 rounded-lg text-white bg-primary font-medium hover:bg-accent hover:text-black shadow-md flex items-center justify-center">
-              <span id="buttonText">EXPLORE</span>
-              <span id="spinnerContainer" class="hidden ml-4"> 
-                  <span id="spinner"></span>
-              </span>
-          </button> 
+          <button type="button" class="px-12 py-4 rounded-lg text-white bg-primary font-medium hover:bg-accent hover:text-black shadow-md flex items-center justify-center">
+            <a href="gallery.html" target="_parent"> EXPLORE</a>
+          </button>
+
         </div>
 
       </section>
 
 
   <!-- =====  Footer ====== -->
- <footer class="bg-gradient-to-r from-amber-600 to-black text-gray-300 py-12">
+ <footer class="bg-gradient-to-br from-primary to-black text-gray-300 py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
 
             <div class="md:col-span-2">
-                <h3 class="text-2xl font-extrabold text-yellow-300 mb-3 font-display">Savore</h3>
+                <h3 class="text-2xl font-extrabold text-yellow-300 mb-3 font-display">Naija Delight</h3>
                 <p class="text-sm leading-relaxed mb-6 md:font-bold">
-                    Authentic fancy restaurant in the heart of the city. Experience the taste of Italy with
-                    our handcrafted dishes made from the finest ingredients.
+                    Authentic Nigerian restaurant in the heart of Lagos. Experience the rich flavors of Nigeria with
+                    our traditional dishes made from the finest local ingredients.
                 </p>
                
                 <div class="flex space-x-3">
@@ -391,8 +477,8 @@
                 border-b border-accent inline-block">Opening Hours</h4>
                     <ul class="text-sm space-y-1">
                         <li ><span class="text-gray-300">Monday - Thursday:</span> 10am - 11pm</li >
-                        <li ><span class="text-gray-300">Friday - Saturday:</span> 11am - 11pm</li >
-                        <li ><span class="text-gray-300">Sunday:</span> 12pm - 9pm</li >
+                        <li ><span class="text-gray-300">Friday - Saturday:</span> 11am - 12am</li >
+                        <li ><span class="text-gray-300">Sunday:</span> 12pm - 10pm</li >
                     </ul>
                 </div>
 
@@ -400,9 +486,9 @@
                     <h4 class="text-sm font-semibold text-accent uppercase mb-4 tracking-wider pb-1 
                 border-b border-accent inline-block">Contact Info</h4>
                     <p class="text-sm space-y-1">
-                        <span class="block">123 Italian Street, NY 10001</span>
-                        <span class="block">(212) 555-1234</span>
-                        <a href="mailto:info@savore.co" class="hover:text-primary transition">info@savore.co</a>
+                        <span class="block">123 Victoria Island, Lagos, Nigeria</span>
+                        <span class="block">+234 123 456 7890</span>
+                        <a href="mailto:info@naijadelight.ng" class="hover:text-primary transition">info@naijadelight.ng</a>
                     </p>
                 </div>
             </div>
@@ -410,12 +496,12 @@
         </div>
 
         <div class="mt-10 pt-6 border-t border-gray-800 text-center text-xs md:text-sm text-gray-400">
-            &copy; 2025 Savore. All rights reserved
+            &copy; 2025 Naija Delight. All rights reserved
         </div>
     </div>
 </footer>
 
 <!--Script-->
-<script src="js/main.js"></script>
+<script src="./js/main.js"></script>
 </body>
 </html>

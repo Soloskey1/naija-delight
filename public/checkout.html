@@ -16,10 +16,10 @@
     <!-- ===== HEADER === -->
      <header class="sticky top-0 z-50 shadow-sm bg-white/80 backdrop-blur-md px-6 h-20 flex justify-between items-center border-b border-stone-200">
         <div class="flex items-center space-x-4">
-            <div class="hidden md:block border-l-4 border-primary pl-4">
-                <h1 class="text-3xl font-display font-black text-primary tracking-tight">SAVORE</h1>
-                <p class="text-[10px] text-stone-500 uppercase tracking-[0.3em] font-bold">Est 2015</p>
-            </div>
+            <div class="flex flex-col justify-center items-start flex-shrink-0">
+                <h1 class="text-3xl font-display font-black text-primary">NAIJA DELIGHT</h1>
+                <p class="text-xs text-stone-500 uppercase tracking-widest">Food • Recipes • Stories</p>
+              </div>        
         </div>
         
         <h2 class="text-left text-lg md:text-2xl font-bold text-primary font-display">Checkout Page</h2>
@@ -53,7 +53,7 @@
                     <div class="space-y-3 mb-6">
                         <div class="flex justify-between text-gray-600">
                             <span>Subtotal</span>
-                            <span id="summarySubtotal">$0.00</span>
+                            <span id="summarySubtotal">₦0.00</span>
                         </div>
                         <div class="flex justify-between text-gray-600">
                             <span>Delivery Fee</span>
@@ -61,31 +61,32 @@
                         </div>
                         <div class="flex justify-between text-xl font-bold text-primary pt-3 border-t">
                             <span>Total</span>
-                            <span id="summaryTotal">$0.00</span>
+                            <span id="summaryTotal">₦0.00</span>
                         </div>
                     </div>
-
+            
                     <h4 class="font-bold mb-3 text-sm uppercase text-gray-500">Payment Method</h4>
                     <div class="space-y-3 mb-6">
                         <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition">
-                            <input type="radio" name="payment" value="card" checked class="w-4 h-4 text-amber-600">
-                            <span class="ml-3"><i class="far fa-credit-card mr-2"></i> Credit Card</span>
+                            <input type="radio" name="payment" value="transfer" checked class="w-4 h-4 text-amber-600">
+                            <span class="ml-3"><i class="fas fa-university mr-2"></i> Bank Transfer</span>
                         </label>
                         <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition">
-                            <input type="radio" name="payment" value="paypal" class="w-4 h-4 text-amber-600">
-                            <span class="ml-3"><i class="fab fa-paypal mr-2"></i> PayPal</span>
+                            <input type="radio" name="payment" value="card" class="w-4 h-4 text-amber-600">
+                            <span class="ml-3"><i class="far fa-credit-card mr-2"></i> Debit Card (Paystack)</span>
                         </label>
                         <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50 transition">
                             <input type="radio" name="payment" value="cash" class="w-4 h-4 text-amber-600">
                             <span class="ml-3"><i class="fas fa-money-bill-wave mr-2"></i> Cash on Delivery</span>
                         </label>
                     </div>
-
+            
                     <button onclick="processOrder()" class="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-amber-800 transition shadow-lg">
                         Place Order
                     </button>
                 </div>
             </div>
+
         </div>
     </div>
 

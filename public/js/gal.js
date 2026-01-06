@@ -3,161 +3,163 @@ let currentItem = null;
 function goBack() { window.history.back(); }
 const isDesktop = () => window.innerWidth >= 768;
 
-// Menu data with authentic Italian meal photos
+// Menu data with authentic Nigerian meal photos
 const menu = {
- 'apetizers': [
+ 'Small Chops': [
   {
-    name: "Classic Bruschetta",
-    price: '$8.50',
-    desc: "Grilled rustic bread rubbed with garlic and topped with fresh vine-ripened tomatoes, basil, and a drizzle of olive oil.",
-    img: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&w=800", // Bruschetta 
+    name: "Puff Puff",
+    price: '₦1,500',
+    desc: "Deep-fried sweet dough balls, soft and fluffy inside, a popular Nigerian street snack.",
+    img: "https://images.unsplash.com/photo-1563379091339-03246963d9d6",
     tag: 'V'
   },
   {
-    name: "Arancini di Riso",
-    price: '$12.00',
-    desc: "Crispy, deep-fried saffron risotto balls stuffed with creamy mozzarella and savory ground beef ragu.",
-    img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&w=800", // Fried rice balls (close visual)
-    tag: 'S'
-  },
-  {
-    name: "Prosciutto e Melone",
-    price: '$14.00',
-    desc: "Thinly sliced, aged prosciutto ham draped over sweet, seasonal cantaloupe melon slices.",
-    img: "https://images.unsplash.com/photo-1631817431403-4e54c59df257?auto=format&w=800", // Melon & prosciutto
-    tag: 'G'
-  },
-],
-
-'first-course': [
-  {
-    name: "Pasta",
-    price: "$18.50",
-    desc: "Classic Roman dish with cured pork cheek (guanciale), egg yolks, Pecorino Romano cheese, and black pepper.",
-    img: "https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&w=800", // Pasta bowl
-    tag: 'P'
-  },
-  {
-    name: "Lasagna Bolognese",
-    price: "$22.00",
-    desc: "Layers of fresh pasta sheets, rich beef ragu, creamy béchamel sauce, and Parmigiano-Reggiano cheese.",
-    img: "https://images.unsplash.com/photo-1605475124529-8a9f385b6bc1?auto=format&w=800", // Lasagna plate
-    tag: 'C'
-  },
-  {
-    name: "Cacio e Pepe",
-    price: "$16.00",
-    desc: "Simple but elegant pasta dish: spaghetti tossed with Pecorino Romano cheese and freshly cracked black pepper.",
-    img: "https://images.unsplash.com/photo-1617191511779-52a82fbeb7af?auto=format&w=800", // Cheese + pepper pasta
-    tag: 'V'
-  },
-  {
-    name: "Ravioli di Zucca",
-    price: "$20.00",
-    desc: "Handmade ravioli filled with sweet butternut squash and served in a sage butter sauce.",
-    img: "https://images.unsplash.com/photo-1562967916-eb82221dfb6b?auto=format&w=800", // Ravioli shot
-    tag: 'V'
-  },
-],
-
-'second-courses': [
-  {
-    name: "Ossobuco alla Milanese",
-    price: "$32.00",
-    desc: "Braised veal shanks served with a gremolata (lemon zest, garlic, parsley) and saffron risotto.",
-    img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&w=800", // Braised dish
+    name: "Meat Pie",
+    price: '₦2,000',
+    desc: "Flaky pastry filled with seasoned minced meat, carrots, and potatoes.",
+    img: "https://images.unsplash.com/photo-1602524812560-6a1c0c55a3c7",
     tag: 'M'
   },
   {
-    name: "Pollo Marsala",
-    price: "$24.50",
-    desc: "Chicken cutlets lightly dusted in flour, sautéed in a mushroom and Marsala wine reduction.",
-    img: "https://images.unsplash.com/photo-1586190848496-4caa1b8908fa?auto=format&w=800", // Chicken dish
+    name: "Peppered Gizzard",
+    price: '₦3,000',
+    desc: "Spicy, tender chicken gizzards sautéed with peppers, onions, and Nigerian spices.",
+    img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c",
+    tag: 'S'
+  }
+],
+
+'Swallow (main)': [
+  {
+    name: "Pounded Yam with Egusi",
+    price: "₦8,000",
+    desc: "Smooth, stretchy pounded yam served with melon seed soup containing assorted meats and fish.",
+    img: "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659",
+    tag: 'M'
+  },
+  {
+    name: "Jollof Rice",
+    price: "₦7,000",
+    desc: "Famous West African one-pot rice cooked in a rich tomato and pepper sauce with chicken.",
+    img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90",
     tag: 'C'
   },
   {
-    name: "Grilled Swordfish",
-    price: "$28.00",
-    desc: "Fresh swordfish steak grilled and seasoned with lemon and herbs, served with a side of mixed greens.",
-    img: "https://images.unsplash.com/photo-1587345291147-1a7806f3d01d?auto=format&w=800", // Grilled fish
+    name: "Eba with Okra Soup",
+    price: "₦6,500",
+    desc: "Garri (cassava flakes) prepared with hot water, served with slimy okra soup and fish.",
+    img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae4b",
+    tag: 'V'
+  },
+  {
+    name: "Amala with Ewedu",
+    price: "₦7,500",
+    desc: "Yam flour swallow with jute leaf soup, served with assorted meat and cow skin (ponmo).",
+    img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187",
+    tag: 'V'
+  }
+],
+
+'Protein Soups': [
+  {
+    name: "Goat Meat Pepper Soup",
+    price: "₦10,000",
+    desc: "Spicy, light broth with tender goat meat, utazi leaves, and traditional peppers.",
+    img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d",
+    tag: 'M'
+  },
+  {
+    name: "Fried Fish with Stew",
+    price: "₦8,500",
+    desc: "Whole fried tilapia or croaker served with rich Nigerian tomato and pepper stew.",
+    img: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8",
     tag: 'F'
   },
+  {
+    name: "Grilled Suya",
+    price: "₦9,000",
+    desc: "Skewered spicy beef grilled over open flame, served with sliced onions and tomatoes.",
+    img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
+    tag: 'M'
+  }
 ],
 
-'side-dishes': [
+'Side Dishes': [
   {
-    name: "Creamy Polenta",
-    price: "$6.00",
-    desc: "Slow-cooked cornmeal, incredibly smooth and often served with a touch of butter and cheese.",
-    img: "https://images.unsplash.com/photo-1599785209707-6c938d96418b?auto=format&w=800", // Polenta bowl
+    name: "Fried Plantains (Dodo)",
+    price: "₦2,000",
+    desc: "Sweet ripe plantains sliced and fried until golden brown and caramelized.",
+    img: "https://images.unsplash.com/photo-1571898223471-4c6762f0c1a0",
     tag: 'V'
   },
   {
-    name: "Sautéed Spinach",
-    price: "$7.50",
-    desc: "Fresh spinach leaves quickly sautéed with garlic and a hint of red pepper flakes.",
-    img: "https://images.unsplash.com/photo-1589719470456-0d37d5e9f085?auto=format&w=800", // Spinach sauté
+    name: "Moi Moi",
+    price: "₦2,500",
+    desc: "Steamed bean pudding made from blended beans, peppers, and oil, often with eggs or fish.",
+    img: "https://images.unsplash.com/photo-1565299507177-b0ac66763828",
     tag: 'V'
   },
   {
-    name: "Roasted Potatoes",
-    price: "$6.50",
-    desc: "Crispy rosemary and thyme roasted new potatoes.",
-    img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&w=800", // Roasted potatoes
+    name: "Coleslaw",
+    price: "₦2,000",
+    desc: "Fresh cabbage and carrot salad with creamy mayonnaise dressing.",
+    img: "https://images.unsplash.com/photo-1540420773420-3366772f4999",
+    tag: 'V'
+  }
+],
+
+'Desserts': [
+  {
+    name: "Chin Chin",
+    price: "₦3,000",
+    desc: "Crispy, sweet fried dough snacks flavored with nutmeg.",
+    img: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e",
+    tag: 'D'
+  },
+  {
+    name: "Pap (Akamu) with Akara",
+    price: "₦3,000",
+    desc: "Smooth corn pudding served with fried bean cakes for a traditional breakfast or dessert.",
+    img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47",
     tag: 'V'
   },
+  {
+    name: "Coconut Candy",
+    price: "₦2,500",
+    desc: "Sweet coconut chunks cooked with sugar until caramelized.",
+    img: "https://images.unsplash.com/photo-1488477181946-6428a0291777",
+    tag: 'D'
+  }
 ],
 
-'desserts': [
+'Drinks': [
   {
-    name: "Tiramisu Classico",
-    price: "$10.00",
-    desc: "Layers of coffee-soaked ladyfingers, rich mascarpone cream, and cocoa powder.",
-    img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&w=800", // Tiramisu style
-    tag: 'D'
-  },
-  {
-    name: "Panna Cotta",
-    price: "$9.50",
-    desc: "Silky smooth cooked cream dessert topped with a vibrant raspberry coulis.",
-    img: "https://images.unsplash.com/photo-1599785209707-6c938d96418b?auto=format&w=800", // Panna cotta look
-    tag: 'D'
-  },
-  {
-    name: "Cannoli Siciliani",
-    price: "$8.00",
-    desc: "Crispy fried pastry shells filled with sweet, creamy ricotta cheese and candied fruit.",
-    img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&w=800", // Cannoli styled
-    tag: 'D'
-  },
-],
-
-'drinks': [
-  {
-    name: "Red Wine (Chianti)",
-    price: "$10.00",
-    desc: "A robust and dry Italian red, perfect for pairing with pasta or red meats.",
-    img: "https://images.unsplash.com/photo-1510627498534-cf7e9002facc?auto=format&w=800", // Chianti wine
+    name: "Palm Wine",
+    price: "₦3,500",
+    desc: "Traditional alcoholic beverage tapped from palm trees, naturally sweet and slightly effervescent.",
+    img: "https://images.unsplash.com/photo-1510627498534-cf7e9002facc",
     tag: 'A'
   },
   {
-    name: "Sparkling Water",
-    price: "$3.50",
-    desc: "Refreshing Italian sparkling mineral water.",
-    img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&w=800", // Sparkling water
+    name: "Zobo Drink",
+    price: "₦1,500",
+    desc: "Refreshing hibiscus tea infused with ginger, pineapple, and spices.",
+    img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc",
     tag: 'N'
   },
   {
-    name: "Coffee Cappuccino",
-    price: "$11.00",
-    desc: "Classic Italian cappuccino with espresso and steamed milk foam.",
-    img: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&w=800", // Cappuccino
+    name: "Chapman",
+    price: "₦3,500",
+    desc: "Popular Nigerian cocktail with mixed fruits, Angostura bitters, and soda.",
+    img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b",
     tag: 'A'
-  },
+  }
 ]
 };
 
-function formatTitle(cat) { return cat.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '); }
+function formatTitle(cat) { 
+    return cat.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' '); 
+}
 
 function createCard(item) {
     return `
@@ -165,7 +167,7 @@ function createCard(item) {
             <div class="relative overflow-hidden h-56">
                 <img src="${item.img}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm">
-                    ${item.price}
+                     ${item.price}
                 </div>
             </div>
             <div class="p-6 flex-1 flex flex-col">
@@ -241,7 +243,7 @@ function openOrderModal(item) {
         <div class="border-t border-stone-100 pt-6">
             <div class="flex justify-between items-center mb-6">
                 <span class="text-stone-400 font-medium">Subtotal</span>
-                <span id="currentTotal" class="text-2xl font-display font-bold text-dark">$0.00</span>
+                <span id="currentTotal" class="text-2xl font-display font-bold text-dark">₦0</span>
             </div>
             <div class="grid grid-cols-1 gap-3">
                 <button onclick="saveAndCheckout()" class="w-full bg-[#059669] text-white py-4 rounded-2xl font-bold hover:bg-[#047857] transition shadow-lg shadow-emerald-100">
@@ -289,7 +291,7 @@ function openMobileItemModal(item) {
         <div class="pt-4">
             <div class="flex justify-between items-center mb-4">
                 <span class="text-stone-400 font-medium">Subtotal</span>
-                <span id="currentTotal" class="text-2xl font-display font-bold text-dark">$0.00</span>
+                <span id="currentTotal" class="text-2xl font-display font-bold text-dark">₦0</span>
             </div>
             <div class="grid grid-cols-1 gap-2">
                 <button onclick="saveAndCheckout()" class="w-full bg-[#059669] text-white py-3 rounded-xl font-bold hover:bg-[#047857] transition">
@@ -320,22 +322,33 @@ function updateQuantity(change) {
 
 function calculateTotal() {
     if (!currentItem) return;
-    const price = parseFloat(currentItem.price.replace('$',''));
-    const qty = parseInt(document.getElementById('itemQuantity').value);
-    document.getElementById('currentTotal').textContent = `$${(price * qty).toFixed(2)}`;
+    const priceStr = currentItem.price.replace('₦', '').replace(',', '').trim();
+    const price = parseFloat(priceStr);
+    const qty = parseInt(document.getElementById('itemQuantity').value || 1);
+    const total = price * qty;
+    // Format with commas for thousands
+    const formatted = '₦' + total.toLocaleString('en-NG');
+    const totalElements = document.querySelectorAll('#currentTotal');
+    totalElements.forEach(el => el.textContent = formatted);
 }
 
 function addToCart(showPopup = true) {
     if (!currentItem) return;
-    const qty = parseInt(document.getElementById('itemQuantity').value);
-    const price = parseFloat(currentItem.price.replace('$', ''));
+    const qty = parseInt(document.getElementById('itemQuantity').value || 1);
+    const priceStr = currentItem.price.replace('₦', '').replace(',', '').trim();
+    const price = parseFloat(priceStr);
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const idx = cart.findIndex(i => i.name === currentItem.name);
-    if (idx > -1) cart[idx].quantity += qty;
-    else cart.push({ name: currentItem.name, price: price, quantity: qty });
+    if (idx > -1) {
+        cart[idx].quantity += qty;
+        cart[idx].total = cart[idx].price * cart[idx].quantity;
+    } else {
+        cart.push({ name: currentItem.name, price: price, quantity: qty, total: price * qty });
+    }
     localStorage.setItem('cart', JSON.stringify(cart));
-    if (showPopup) alert(`${currentItem.name} added!`);
+    if (showPopup) alert(`${qty} × ${currentItem.name} added to cart!`);
     closeOrderModal();
+    closeMobileItemModal(); // In case mobile modal is open
 }
 
 function saveAndCheckout() {
@@ -345,5 +358,7 @@ function saveAndCheckout() {
 
 window.addEventListener('load', () => {
     renderCategoryButtons();
-filterCategory('antipasti');
+    // Default to first category
+    const firstCat = Object.keys(menu)[0];
+    if (firstCat) filterCategory(firstCat);
 });

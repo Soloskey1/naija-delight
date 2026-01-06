@@ -6,15 +6,15 @@
     --font-body: "Inter", sans-serif;
 
     /* Core Brand Colors */
-    --color-primary: #3C2A21;
-    --color-accent: #FCD34D;
-    --color-camel: #D7B494;
-    
-    /* Neutral System */
-    --color-dark: #1C1917;
-    --color-light: #FDFBF7;
-    --color-warm-gray: #A89F94;
-    --color-terracotta: #B4533F;
+--color-primary: #C2410C;     /* Burnt orange - more sophisticated than pure orange */
+--color-accent: #F59E0B;      /* Amber - warmer than lemon */
+--color-camel: #D6BC94;       /* Warm khaki */
+
+/* Neutral System */
+--color-dark: #1C1917;        /* Rich black (keep) */
+--color-light: #FFFDF8;       /* Warm off-white */
+--color-warm-gray: #8C8379;   /* Muted taupe */
+--color-terracotta: #B4533F;  /* Keep - works perfectly */
 
 }
 
@@ -26,6 +26,7 @@
     h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-display);
     }
+    body { @apply font-body text-dark bg-white; }
 }
 
 
@@ -33,32 +34,10 @@
     /* Fixed space error and combined hover logic */
     @apply text-dark transition-all duration-300
            hover:text-amber-800 hover:underline 
-           hover:decoration-primary hover:underline-offset-4 
+           hover:decoration-primary hover:underline-offset-[6px] 
            hover:decoration-[3px];
 }
 
-
-/* === Fixed Animations === */
-
-/* Entrance: Slide from Left */
-.slide-in-left {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* Entrance: Fade and Scale Up */
-.slide-in-fade {
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
-    transition: all 0.8s ease-out;
-}
-
-.slide-in-left.active,
-.slide-in-fade.active {
-    opacity: 1;
-    transform: translateX(0) translateY(0) scale(1);
-}
 
 /* === Spinner & Loading === */
 .is-loading {
@@ -67,13 +46,12 @@
 }
 
 #spinner {
-    width: 1.25rem;
-    height: 1.25rem;
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid var(--color-dark); /* Use your theme variable */
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    display: inline-block; 
-    animation: spin 1s linear infinite;
+    border-top-color: #ffffff;
+    animation: spin 1s ease-in-out infinite;
 }
 
 @keyframes spin {
@@ -81,21 +59,6 @@
     to { transform: rotate(360deg); }
 }
 
-/* === Hamburger Menu Fix === */
-/* Ensure these transitions exist so the "X" looks smooth */
-#bar-top, #bar-middle, #bar-bottom {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-#menu-toggle.menu-open #bar-top {
-    transform: translateY(11px) rotate(45deg);
-}
-#menu-toggle.menu-open #bar-middle {
-    opacity: 0;
-}
-#menu-toggle.menu-open #bar-bottom {
-    transform: translateY(-11px) rotate(-45deg);
-}
 
 /* Your existing image component */ 
 @layer components { 
@@ -121,15 +84,6 @@
     animation: marquee 20s linear infinite;
   }
 
-  /* Image styles 
-  .gallery-img {
-    width: 280px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px;
-    flex-shrink: 0;
-  }  */
-
   /* Keyframes: slide full width left */
   @keyframes marquee {
     0%   { transform: translateX(0); }
@@ -139,4 +93,20 @@
   /* Optional: pause on hover */
   .marquee-container:hover .marquee-track {
     animation-play-state: paused;
+  }
+
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 0.4s ease-out forwards;
   }
