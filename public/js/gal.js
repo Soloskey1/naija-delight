@@ -3,6 +3,11 @@ let currentItem = null;
 function goBack() { window.history.back(); }
 const isDesktop = () => window.innerWidth >= 768;
 
+// Add this helper function at the top
+function shouldUseMobileModal() {
+    return window.innerWidth < 768; // MD breakpoint
+}
+
 // Menu data with authentic Nigerian meal photos
 const menu = {
  'Small Chops': [
@@ -222,36 +227,54 @@ function filterCategory(cat) {
 
 function handleCategoryClick(cat) { filterCategory(cat); }
 
+// Updated function to check screen size
 function openOrderModal(item) {
     currentItem = item;
+    
+    // Check if we should use mobile modal instead
+    if (shouldUseMobileModal()) {
+        openMobileItemModal(item);
+        return;
+    }
+    
     const modal = document.getElementById('orderModal');
     const details = document.getElementById('orderItemDetails');
 
     details.innerHTML = `
-        <div class="bg-stone-50 p-4 rounded-2xl flex justify-between items-center">
-            <span class="font-bold text-dark">${item.name}</span>
-            <span class="text-primary font-bold">${item.price}</span>
-        </div>
-        <div class="flex justify-between items-center py-4">
-            <span class="text-sm font-bold text-stone-400 uppercase tracking-widest">Quantity</span>
-            <div class="flex items-center space-x-6">
-                <button onclick="updateQuantity(-1)" class="w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center hover:bg-stone-50"> <i class="fas fa-minus text-xs"></i> </button>
-                <input type="number" id="itemQuantity" value="1" readonly class="w-8 text-center text-xl font-bold">
-                <button onclick="updateQuantity(1)" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/30"> <i class="fas fa-plus text-xs"></i> </button>
+        <div class="space-y-6">
+            <!-- Food Image for Desktop Modal -->
+            <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-lg mb-4">
+                <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover">
             </div>
-        </div>
-        <div class="border-t border-stone-100 pt-6">
-            <div class="flex justify-between items-center mb-6">
-                <span class="text-stone-400 font-medium">Subtotal</span>
-                <span id="currentTotal" class="text-2xl font-display font-bold text-dark">₦0</span>
+            
+            <div class="bg-stone-50 p-4 rounded-2xl flex justify-between items-center">
+                <span class="font-bold text-dark">${item.name}</span>
+                <span class="text-primary font-bold">${item.price}</span>
             </div>
-            <div class="grid grid-cols-1 gap-3">
-                <button onclick="saveAndCheckout()" class="w-full bg-[#059669] text-white py-4 rounded-2xl font-bold hover:bg-[#047857] transition shadow-lg shadow-emerald-100">
-                    Proceed to Checkout
-                </button>
-                <button onclick="addToCart()" class="w-full py-3 text-stone-500 font-semibold hover:text-primary transition">
-                    Add & Continue
-                </button>
+            <div>
+                <p class="text-stone-600 text-base leading-relaxed mb-4">${item.desc}</p>
+            </div>
+            <div class="flex justify-between items-center py-4">
+                <span class="text-sm font-bold text-stone-400 uppercase tracking-widest">Quantity</span>
+                <div class="flex items-center space-x-6">
+                    <button onclick="updateQuantity(-1)" class="w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center hover:bg-stone-50"> <i class="fas fa-minus text-xs"></i> </button>
+                    <input type="number" id="itemQuantity" value="1" readonly class="w-8 text-center text-xl font-bold">
+                    <button onclick="updateQuantity(1)" class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/30"> <i class="fas fa-plus text-xs"></i> </button>
+                </div>
+            </div>
+            <div class="border-t border-stone-100 pt-6">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-stone-400 font-medium">Subtotal</span>
+                    <span id="currentTotal" class="text-2xl font-display font-bold text-dark">₦0</span>
+                </div>
+                <div class="grid grid-cols-1 gap-3">
+                    <button onclick="saveAndCheckout()" class="w-full bg-[#059669] text-white py-4 rounded-2xl font-bold hover:bg-[#047857] transition shadow-lg shadow-emerald-100">
+                        Proceed to Checkout
+                    </button>
+                    <button onclick="addToCart()" class="w-full py-3 text-stone-500 font-semibold hover:text-primary transition">
+                        Add & Continue
+                    </button>
+                </div>
             </div>
         </div>
     `;
@@ -355,6 +378,24 @@ function saveAndCheckout() {
     addToCart(false);
     window.location.href = 'checkout.html';
 }
+
+// Add resize listener to handle screen size changes
+window.addEventListener('resize', function() {
+    // If a modal is open and screen size changes, we might want to close and reopen
+    // This is optional but improves user experience
+    const orderModal = document.getElementById('orderModal');
+    const mobileModal = document.getElementById('mobileItemModal');
+    
+    if (!orderModal.classList.contains('hidden') && shouldUseMobileModal()) {
+        // If desktop modal is open but now on mobile, close it
+        closeOrderModal();
+    }
+    
+    if (!mobileModal.classList.contains('hidden') && !shouldUseMobileModal()) {
+        // If mobile modal is open but now on desktop, close it
+        closeMobileItemModal();
+    }
+});
 
 window.addEventListener('load', () => {
     renderCategoryButtons();

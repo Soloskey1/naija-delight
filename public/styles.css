@@ -458,9 +458,6 @@
   .max-h-\[70vh\] {
     max-height: 70vh;
   }
-  .max-h-\[800px\] {
-    max-height: 800px;
-  }
   .max-h-full {
     max-height: 100%;
   }
@@ -552,6 +549,9 @@
   }
   .cursor-pointer {
     cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .list-decimal {
     list-style-type: decimal;
@@ -1144,6 +1144,9 @@
   }
   .text-yellow-300 {
     color: var(--color-yellow-300);
+  }
+  .capitalize {
+    text-transform: capitalize;
   }
   .uppercase {
     text-transform: uppercase;
