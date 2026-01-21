@@ -103,3 +103,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
   });
+
+
+
+
+/* SCRIPT FOR REVERVATION FORM */
+// 1. Select the elements
+const form = document.getElementById('reservationForm');
+const successMsg = document.getElementById('successMessage');
+const displayName = document.getElementById('displayName');
+const resetBtn = document.getElementById('resetBtn');
+
+// 2. Handle Form Submission
+form.addEventListener('submit', (e) => {
+  e.preventDefault(); // Stop page from reloading
+
+  // Get the value of the name input
+  const nameValue = document.getElementById('name').value;
+  
+  // Update the success message with the user's name
+  displayName.textContent = nameValue;
+
+  // Toggle visibility
+  form.classList.add('hidden');
+  successMsg.classList.remove('hidden');
+  
+  console.log("Reservation Data Captured!");
+});
+
+// 3. Reset the form
+resetBtn.addEventListener('click', () => {
+  form.reset(); // Clear all inputs
+  successMsg.classList.add('hidden');
+  form.classList.remove('hidden');
+});

@@ -15,21 +15,21 @@ const menu = {
     name: "Puff Puff",
     price: '₦1,500',
     desc: "Deep-fried sweet dough balls, soft and fluffy inside, a popular Nigerian street snack.",
-    img: "https://images.unsplash.com/photo-1563379091339-03246963d9d6",
+    img: "https://scontent.fabv2-2.fna.fbcdn.net/v/t39.30808-6/480992862_612640714965809_7629121884984362773_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=110&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeElMiuDXC1ZYurkqC__hxjaDR33GgB0FRwNHfcaAHQVHAE_SN_urgSnnoEfoJgyrhiftzHdh8D3PtMD13lzEWfq&_nc_ohc=pYlTTu6LFgIQ7kNvwGLPBnq&_nc_oc=Adn7KXCuJxRUySuJ9CHLL2YlYb9qWjaX73C6VU59qyJYYFDOluuOjK30gFK4hp32a3E&_nc_zt=23&_nc_ht=scontent.fabv2-2.fna&_nc_gid=u5jyZ-Pw4bVscJl6sYCf3g&oh=00_AfoL6StgV6Bpfif8P0D6-sQ84EbPH3viC2Hsm1AHGfrAJw&oe=6976DB7B",
     tag: 'V'
   },
   {
     name: "Meat Pie",
     price: '₦2,000',
     desc: "Flaky pastry filled with seasoned minced meat, carrots, and potatoes.",
-    img: "https://images.unsplash.com/photo-1602524812560-6a1c0c55a3c7",
+    img: "https://www.seriouseats.com/thmb/2E-RocNOTLxwZRjDMFQkmd5yflk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20220809-NigerianMeatpies-MaureenCelestine-hedenote-939cb7af957a40a9b8af6f6dfe323ff1.JPG",
     tag: 'M'
   },
   {
-    name: "Peppered Gizzard",
-    price: '₦3,000',
+    name: "Stewed Gizzard",
+    price: '₦3,500',
     desc: "Spicy, tender chicken gizzards sautéed with peppers, onions, and Nigerian spices.",
-    img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c",
+    img: "https://eatwellabi.com/wp-content/uploads/2022/09/gizzard-8-720x480.jpg",
     tag: 'S'
   }
 ],
@@ -39,28 +39,28 @@ const menu = {
     name: "Pounded Yam with Egusi",
     price: "₦8,000",
     desc: "Smooth, stretchy pounded yam served with melon seed soup containing assorted meats and fish.",
-    img: "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659",
+    img: "https://i.ytimg.com/vi/Kl57yfVNIoE/maxresdefault.jpg",
     tag: 'M'
   },
   {
     name: "Jollof Rice",
     price: "₦7,000",
     desc: "Famous West African one-pot rice cooked in a rich tomato and pepper sauce with chicken.",
-    img: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90",
+    img: "https://media.istockphoto.com/id/1404501005/photo/jollof-rice.jpg?s=612x612&w=0&k=20&c=jMHne7L_u5mE5yqB9Bmofsv5eIAfBZi82i0_EBA7gJM=",
     tag: 'C'
   },
   {
     name: "Eba with Okra Soup",
     price: "₦6,500",
     desc: "Garri (cassava flakes) prepared with hot water, served with slimy okra soup and fish.",
-    img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae4b",
+    img: "https://hfce.eu/app/uploads/2022/08/Eba-with-Okra-Soup.jpg",
     tag: 'V'
   },
   {
     name: "Amala with Ewedu",
     price: "₦7,500",
     desc: "Yam flour swallow with jute leaf soup, served with assorted meat and cow skin (ponmo).",
-    img: "https://images.unsplash.com/photo-1565958011703-44f9829ba187",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkiDxP8nueXEb-1xTlS0cW5P0gUxwtF1_U6TpKnk546d8zPAZ-jq2LvPxiqR_dj0ImheQVtz9045m18-vhK7ZZOLVuJq3QLIDag28-DYM&s=10",
     tag: 'V'
   }
 ],
@@ -77,7 +77,7 @@ const menu = {
     name: "Fried Fish with Stew",
     price: "₦8,500",
     desc: "Whole fried tilapia or croaker served with rich Nigerian tomato and pepper stew.",
-    img: "https://images.unsplash.com/photo-1563379926898-05f4575a45d8",
+    img: "https://www.foodandwine.com/thmb/_ju2mYmL_AkuJyJMRABWX9UgX9I=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Carribbean-Inspired-Fish-Stew-FT-RECIPE1122-9b13a2a2e3db4a94b793e44eae44bc08.jpg",
     tag: 'F'
   },
   {
@@ -94,21 +94,21 @@ const menu = {
     name: "Fried Plantains (Dodo)",
     price: "₦2,000",
     desc: "Sweet ripe plantains sliced and fried until golden brown and caramelized.",
-    img: "https://images.unsplash.com/photo-1571898223471-4c6762f0c1a0",
+    img: "https://simshomekitchen.com/wp-content/uploads/2021/09/sweet-fried-plantains.jpg",
     tag: 'V'
   },
   {
     name: "Moi Moi",
     price: "₦2,500",
     desc: "Steamed bean pudding made from blended beans, peppers, and oil, often with eggs or fish.",
-    img: "https://images.unsplash.com/photo-1565299507177-b0ac66763828",
+    img: "https://celebrationgeneration.com/wp-content/uploads/2018/02/Moi-Moi-7.jpg",
     tag: 'V'
   },
   {
     name: "Coleslaw",
     price: "₦2,000",
     desc: "Fresh cabbage and carrot salad with creamy mayonnaise dressing.",
-    img: "https://images.unsplash.com/photo-1540420773420-3366772f4999",
+    img: "https://i.ytimg.com/vi/z_URfRzb5ic/maxresdefault.jpg",
     tag: 'V'
   }
 ],
@@ -140,13 +140,13 @@ const menu = {
 'Drinks': [
   {
     name: "Palm Wine",
-    price: "₦3,500",
+    price: "₦800",
     desc: "Traditional alcoholic beverage tapped from palm trees, naturally sweet and slightly effervescent.",
-    img: "https://images.unsplash.com/photo-1510627498534-cf7e9002facc",
+    img: "https://i.redd.it/xdqoe3r0g7321.jpg",
     tag: 'A'
   },
   {
-    name: "Zobo Drink",
+    name: "Wine",
     price: "₦1,500",
     desc: "Refreshing hibiscus tea infused with ginger, pineapple, and spices.",
     img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc",
@@ -156,7 +156,7 @@ const menu = {
     name: "Chapman",
     price: "₦3,500",
     desc: "Popular Nigerian cocktail with mixed fruits, Angostura bitters, and soda.",
-    img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ48qMnNm98Mh44uVs8Cfx-Pb5XPRQayFNLSw&s",
     tag: 'A'
   }
 ]
